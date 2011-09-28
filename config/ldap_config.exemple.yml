@@ -1,0 +1,11 @@
+ldap:
+  host:           hp-kernel.com
+  base_dn:        dc=hp-kernel,dc=com
+  account_suffix: ''
+  username:       cn=admin,dc=hp-kernel,dc=com
+  password:       secret
+  use_ssl:        false
+  user:
+    base_dn:      ou=people,dc=hp-kernel,dc=com
+  group:
+    base_dn:      ou=groups,dc=hp-kernel,dc=com  
