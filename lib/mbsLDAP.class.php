@@ -9,7 +9,7 @@ class mbsLDAP {
 	 * oxLDAP constructor.
 	 */
 	protected $params;
-	protected $instance;
+	protected static $instance;
 	protected $ldapInstance;
 
 	public function __construct() {
@@ -34,7 +34,10 @@ class mbsLDAP {
 	}
 
 	public static function getInstance(){
-		return new mbsLDAP();
+		if(!self::$instance instanceof self)
+			self::$instance = new self();
+ 
+		return self::$instance;
 	}
 	public function __destruct()
 	{
